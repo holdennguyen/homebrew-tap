@@ -6,7 +6,7 @@ class AwsAssumeRole < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/holdennguyen/aws-assume-role/releases/download/v#{version}/aws-assume-role-macos-arm64"
-      sha256 "PLACEHOLDER_ARM64_SHA256" # arm64
+      sha256 "14202f0e4dac5012936aded575006cf5f1ef42bf3f7e6b5a12c382c3e46a2150" # arm64
     else
       url "https://github.com/holdennguyen/aws-assume-role/releases/download/v#{version}/aws-assume-role-macos-x86_64"
       sha256 "14202f0e4dac5012936aded575006cf5f1ef42bf3f7e6b5a12c382c3e46a2150" # macos
