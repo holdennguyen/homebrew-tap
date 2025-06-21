@@ -9,13 +9,13 @@ class AwsAssumeRole < Formula
       sha256 "PLACEHOLDER_ARM64_SHA256" # arm64
     else
       url "https://github.com/holdennguyen/aws-assume-role/releases/download/v#{version}/aws-assume-role-macos-x86_64"
-      sha256 "d34d5da80bbaab3720b37ea77ab1979e1b76221da466972532c4aeb8365a996d" # macos
+      sha256 "14202f0e4dac5012936aded575006cf5f1ef42bf3f7e6b5a12c382c3e46a2150" # macos
     end
   end
 
   on_linux do
     url "https://github.com/holdennguyen/aws-assume-role/releases/download/v#{version}/aws-assume-role-linux-x86_64"
-    sha256 "ee2f987ab0e7fa15faf5c8f2fbc4fd15dd3148797698316b2b8c4623da011b8f" # linux
+    sha256 "84f697c8c30c39b6dd40607bf5cfcadcd0230f0523221695f82f1cf9d4f3dde0" # linux
   end
 
   depends_on "awscli"
