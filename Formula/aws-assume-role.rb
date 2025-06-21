@@ -31,8 +31,8 @@ class AwsAssumeRole < Formula
       bin.install "aws-assume-role-linux-x86_64" => "aws-assume-role"
     end
 
-    # Install shell completions
-    generate_completions_from_executable(bin/"aws-assume-role", "completion")
+    # Shell completions not yet implemented
+    # generate_completions_from_executable(bin/"aws-assume-role", "completion")
     
     # Create wrapper script for shell integration
     (bin/"awsr").write <<~EOS
