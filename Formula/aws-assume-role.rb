@@ -1,21 +1,21 @@
 class AwsAssumeRole < Formula
   desc "Simple CLI tool to easily switch between AWS IAM roles across different accounts"
   homepage "https://github.com/holdennguyen/aws-assume-role"
-  version "1.2.0"
+  version "1.3.0"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/holdennguyen/aws-assume-role/releases/download/v#{version}/aws-assume-role-macos-arm64"
-      sha256 "14202f0e4dac5012936aded575006cf5f1ef42bf3f7e6b5a12c382c3e46a2150" # arm64
+      sha256 "PLACEHOLDER_ARM64_SHA256" # arm64
     else
       url "https://github.com/holdennguyen/aws-assume-role/releases/download/v#{version}/aws-assume-role-macos-x86_64"
-      sha256 "14202f0e4dac5012936aded575006cf5f1ef42bf3f7e6b5a12c382c3e46a2150" # macos
+      sha256 "8879b601849469700f2d4d067dbdd13b1f0126e43e0160c784f5992da2b52875" # macos
     end
   end
 
   on_linux do
     url "https://github.com/holdennguyen/aws-assume-role/releases/download/v#{version}/aws-assume-role-linux-x86_64"
-    sha256 "84f697c8c30c39b6dd40607bf5cfcadcd0230f0523221695f82f1cf9d4f3dde0" # linux
+    sha256 "cc121033c8de6b08f3bf275b730d41c7b1daf25047003dfb8127cf65d7499e53" # linux
   end
 
   depends_on "awscli"
@@ -31,8 +31,8 @@ class AwsAssumeRole < Formula
       bin.install "aws-assume-role-linux-x86_64" => "aws-assume-role"
     end
 
-    # Shell completions not yet implemented
-    # generate_completions_from_executable(bin/"aws-assume-role", "completion")
+    # Install shell completions
+    generate_completions_from_executable(bin/"aws-assume-role", "completion")
     
     # Create wrapper script for shell integration
     (bin/"awsr").write <<~EOS
